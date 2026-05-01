@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DriveAway — Car Rentals Made Easy</title>
+  <meta name="description" content="DriveAway is a demo car rental site. Browse, compare, and book rental cars at great prices." />
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+
+  <!--
+    Fullstory Browser snippet (Browser API v2).
+    Replace 'OXXXX' below with your real Fullstory Org ID.
+    Docs: https://developer.fullstory.com/browser/quickstart-guide/
+  -->
+  <script>
+    window['_fs_host'] = 'fullstory.com';
+    window['_fs_script'] = 'edge.fullstory.com/s/fs.js';
+    window['_fs_org'] = 'OXXXX'; // TODO: replace with real FS_ORG (e.g. 'O-1ABC2D-na1')
+    window['_fs_namespace'] = 'FS';
+    (function(m,n,e,t,l,o,g,y){
+      if (e in m) {if(m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');} return;}
+      g=m[e]=function(a,b,s){g.q?g.q.push([a,b,s]):g._api(a,b,s);};g.q=[];
+      o=n.createElement(t);o.async=1;o.crossOrigin='anonymous';o.src='https://'+_fs_script;
+      y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
+      g.identify=function(i,v,s){g(l,{uid:i},s);if(v)g(l,v,s)};g.setUserVars=function(v,s){g(l,v,s)};g.event=function(i,v,s){g('event',{n:i,p:v},s)};
+      g.anonymize=function(){g.identify(!!0)};
+      g.shutdown=function(){g("rec",!1)};g.restart=function(){g("rec",!0)};
+      g.log = function(a,b){g("log",[a,b])};
+      g.consent=function(a){g("consent",!arguments.length||a)};
+      g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
+      g.clearUserCookie=function(){};
+      g.setVars=function(n, p){g('setVars',[n,p]);};
+      g._w={};y='XMLHttpRequest';g._w[y]=m[y];y='fetch';g._w[y]=m[y];
+      if(m[y])m[y]=function(){return g._w[y].apply(this,arguments)};
+      g._v="2.0.0";
+    })(window,document,window['_fs_namespace'],'script','user');
+  </script>
+</head>
+<body data-page="home">
+  <header class="site-header" data-section="header">
+    <div class="container">
+      <a class="brand" href="./index.html" data-component="link" data-id="brand-home">Drive<span>Away</span></a>
+      <nav class="nav" aria-label="Primary">
+        <a href="./cars.html" data-component="link" data-id="nav-cars">Cars</a>
+        <a href="./about.html" data-component="link" data-id="nav-about">About</a>
+        <a href="./contact.html" data-component="link" data-id="nav-contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" data-section="hero">
+    <div class="container">
+      <h1>Find your perfect ride</h1>
+      <p class="subtitle">From economy commuters to convertible classics — book the right car in seconds, with transparent pricing and no hidden fees.</p>
+
+      <form id="hero-search" class="search-bar"
+        data-component="form" data-id="hero-search"
+        data-fs-element="Hero Search"
+        data-fs-properties-schema='{"data-form-id":{"type":"str","name":"formId"}}'
+        data-form-id="hero-search">
+        <div>
+          <label for="hero-pickup">Pickup location</label>
+          <input id="hero-pickup" name="pickup" type="text" placeholder="City or airport" required
+            data-component="input" data-id="pickup-location" />
+        </div>
+        <div>
+          <label for="hero-pickup-date">Pickup date</label>
+          <input id="hero-pickup-date" name="pickupDate" type="date" required
+            data-component="input" data-id="pickup-date" />
+        </div>
+        <div>
+          <label for="hero-return-date">Return date</label>
+          <input id="hero-return-date" name="returnDate" type="date" required
+            data-component="input" data-id="return-date" />
+        </div>
+        <button type="submit" class="btn btn-primary"
+          data-component="button" data-id="search-cars">Search</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="section" data-section="value-props">
+    <div class="container">
+      <h2>Why DriveAway?</h2>
+      <p class="lede">A modern rental experience built around what matters most.</p>
+      <div class="value-grid">
+        <div class="value" data-component="card" data-id="value-prop-pricing"><div class="icon">💰</div><h3>Transparent pricing</h3><p class="muted">No surprise fees at the counter. The price you see is the price you pay.</p></div>
+        <div class="value" data-component="card" data-id="value-prop-fleet"><div class="icon">🚗</div><h3>Modern fleet</h3><p class="muted">Late-model vehicles, professionally maintained and cleaned between rentals.</p></div>
+        <div class="value" data-component="card" data-id="value-prop-flexible"><div class="icon">📅</div><h3>Flexible cancellation</h3><p class="muted">Free cancellation up to 48 hours before your rental starts.</p></div>
+        <div class="value" data-component="card" data-id="value-prop-support"><div class="icon">⚡</div><h3>24/7 support</h3><p class="muted">Real humans available around the clock, wherever your trip takes you.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-section="featured-cars" style="background:#fff;">
+    <div class="container">
+      <h2>Featured cars</h2>
+      <p class="lede">A few favorites from our fleet — see something you like? <a href="./cars.html">Browse all cars</a>.</p>
+      <div id="featured-cars" class="car-grid" data-component="grid" data-id="featured-cars">
+        <p class="empty-state">Loading featured cars…</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer" data-section="footer">
+    <div class="container">
+      <div>
+        <div class="brand" style="color:#fff;">Drive<span>Away</span></div>
+        <p class="muted">A demo car rental site. Not affiliated with any real rental brand.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <p><a href="./about.html" data-component="link" data-id="footer-about">About</a></p>
+        <p><a href="./contact.html" data-component="link" data-id="footer-contact">Contact</a></p>
+      </div>
+      <div>
+        <h4>Browse</h4>
+        <p><a href="./cars.html" data-component="link" data-id="footer-cars">All cars</a></p>
+      </div>
+    </div>
+    <div class="legal">© <span id="year"></span> DriveAway Demo. All rights reserved.</div>
+  </footer>
+
+  <script type="module" src="./assets/js/main.js"></script>
+  <script type="module" src="./assets/js/home.js"></script>
+</body>
+</html>

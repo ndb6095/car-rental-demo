@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book your car — DriveAway</title>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+
+  <!-- Fullstory snippet — replace 'OXXXX' with your real Org ID. -->
+  <script>
+    window['_fs_host']='fullstory.com';window['_fs_script']='edge.fullstory.com/s/fs.js';
+    window['_fs_org']='OXXXX';window['_fs_namespace']='FS';
+    (function(m,n,e,t,l,o,g,y){if(e in m){if(m.console&&m.console.log){m.console.log('FullStory namespace conflict.');}return;}
+    g=m[e]=function(a,b,s){g.q?g.q.push([a,b,s]):g._api(a,b,s);};g.q=[];
+    o=n.createElement(t);o.async=1;o.crossOrigin='anonymous';o.src='https://'+_fs_script;
+    y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
+    g.identify=function(i,v,s){g(l,{uid:i},s);if(v)g(l,v,s)};g.setUserVars=function(v,s){g(l,v,s)};
+    g.event=function(i,v,s){g('event',{n:i,p:v},s)};g.anonymize=function(){g.identify(!!0)};
+    g.shutdown=function(){g("rec",!1)};g.restart=function(){g("rec",!0)};g.log=function(a,b){g("log",[a,b])};
+    g.consent=function(a){g("consent",!arguments.length||a)};
+    g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
+    g.clearUserCookie=function(){};g.setVars=function(n,p){g('setVars',[n,p]);};
+    g._w={};y='XMLHttpRequest';g._w[y]=m[y];y='fetch';g._w[y]=m[y];
+    if(m[y])m[y]=function(){return g._w[y].apply(this,arguments)};g._v="2.0.0";
+    })(window,document,window['_fs_namespace'],'script','user');
+  </script>
+</head>
+<body data-page="booking">
+  <header class="site-header" data-section="header">
+    <div class="container">
+      <a class="brand" href="./index.html" data-component="link" data-id="brand-home">Drive<span>Away</span></a>
+      <nav class="nav" aria-label="Primary">
+        <a href="./cars.html" data-component="link" data-id="nav-cars">Cars</a>
+        <a href="./about.html" data-component="link" data-id="nav-about">About</a>
+        <a href="./contact.html" data-component="link" data-id="nav-contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" data-section="booking">
+    <p class="crumbs"><a href="./index.html">Home</a> &rsaquo; <a href="./cars.html">Cars</a> &rsaquo; <a id="crumb-car-link" href="#">Car</a> &rsaquo; Book</p>
+    <h1>Book your car</h1>
+    <p class="muted">This is a demo. No real booking will be made and no payment is collected.</p>
+
+    <div id="booking-grid" class="booking-grid">
+      <form id="booking-form" class="booking-form" novalidate
+        data-component="form" data-id="booking-form"
+        data-fs-element="Booking Form">
+        <fieldset data-section="rental-details">
+          <legend>Rental details</legend>
+          <div class="field-row">
+            <div class="field">
+              <label for="pickup-date">Pickup date</label>
+              <input id="pickup-date" name="pickupDate" type="date" required
+                data-component="input" data-id="pickup-date" />
+            </div>
+            <div class="field">
+              <label for="return-date">Return date</label>
+              <input id="return-date" name="returnDate" type="date" required
+                data-component="input" data-id="return-date" />
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="pickup-location">Pickup location</label>
+              <select id="pickup-location" name="pickupLocation" required
+                data-component="select" data-id="pickup-location">
+                <option value="">Select a location</option>
+                <option>San Francisco Airport (SFO)</option>
+                <option>Los Angeles Airport (LAX)</option>
+                <option>New York JFK</option>
+                <option>Chicago O'Hare (ORD)</option>
+                <option>Miami International (MIA)</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="return-location">Return location</label>
+              <select id="return-location" name="returnLocation" required
+                data-component="select" data-id="return-location">
+                <option value="">Select a location</option>
+                <option>Same as pickup</option>
+                <option>San Francisco Airport (SFO)</option>
+                <option>Los Angeles Airport (LAX)</option>
+                <option>New York JFK</option>
+                <option>Chicago O'Hare (ORD)</option>
+                <option>Miami International (MIA)</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset data-section="extras">
+          <legend>Extras</legend>
+          <label class="checkbox-row" data-component="checkbox" data-id="extra-insurance">
+            <input type="checkbox" name="extras" value="insurance" data-price="14.99" />
+            Insurance protection &mdash; <span class="muted">$14.99/day</span>
+          </label>
+          <label class="checkbox-row" data-component="checkbox" data-id="extra-gps">
+            <input type="checkbox" name="extras" value="gps" data-price="6.99" />
+            GPS navigation &mdash; <span class="muted">$6.99/day</span>
+          </label>
+          <label class="checkbox-row" data-component="checkbox" data-id="extra-child-seat">
+            <input type="checkbox" name="extras" value="child_seat" data-price="9.99" />
+            Child seat &mdash; <span class="muted">$9.99/day</span>
+          </label>
+          <label class="checkbox-row" data-component="checkbox" data-id="extra-additional-driver">
+            <input type="checkbox" name="extras" value="additional_driver" data-price="12.00" />
+            Additional driver &mdash; <span class="muted">$12.00/day</span>
+          </label>
+        </fieldset>
+
+        <fieldset data-section="driver-info">
+          <legend>Driver information</legend>
+          <div class="field-row">
+            <!-- Names: mask. Public-ish PII, structure ok but not the values. -->
+            <div class="field fs-mask">
+              <label for="first-name">First name</label>
+              <input id="first-name" name="firstName" type="text" required autocomplete="given-name"
+                data-component="input" data-id="first-name" />
+            </div>
+            <div class="field fs-mask">
+              <label for="last-name">Last name</label>
+              <input id="last-name" name="lastName" type="text" required autocomplete="family-name"
+                data-component="input" data-id="last-name" />
+            </div>
+          </div>
+
+          <!-- Email: mask (PII). -->
+          <div class="field fs-mask">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email"
+              data-component="input" data-id="email" />
+          </div>
+
+          <!-- Phone: mask (PII per privacy skill). -->
+          <div class="field fs-mask">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" required autocomplete="tel"
+              data-component="input" data-id="phone" />
+          </div>
+
+          <!-- Driver's license: EXCLUDE. Government ID per travel-skill exclude list. -->
+          <div class="field fs-exclude">
+            <label for="license">Driver's license number</label>
+            <input id="license" name="license" type="text" required
+              data-component="input" data-id="license" />
+          </div>
+
+          <!-- Date of birth: EXCLUDE. PII when combined with name (travel skill). -->
+          <div class="field fs-exclude">
+            <label for="dob">Date of birth</label>
+            <input id="dob" name="dob" type="date" required
+              data-component="input" data-id="dob" />
+          </div>
+        </fieldset>
+
+        <!-- Payment fields: EXCLUDE entirely (PCI / payment data must never leave device). -->
+        <fieldset class="fs-exclude" data-section="payment">
+          <legend>Payment (demo only — no real charge)</legend>
+          <div class="field">
+            <label for="card-number">Card number</label>
+            <input id="card-number" name="cardNumber" type="text" inputmode="numeric"
+              autocomplete="cc-number" placeholder="•••• •••• •••• ••••" />
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="card-exp">Expiration</label>
+              <input id="card-exp" name="cardExp" type="text" placeholder="MM/YY" autocomplete="cc-exp" />
+            </div>
+            <div class="field">
+              <label for="card-cvc">CVC</label>
+              <input id="card-cvc" name="cardCvc" type="text" inputmode="numeric"
+                autocomplete="cc-csc" placeholder="123" />
+            </div>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="btn btn-primary btn-large btn-block"
+          data-component="button" data-id="confirm-booking">Confirm booking</button>
+      </form>
+
+      <aside class="summary-card" id="summary-card" aria-label="Booking summary"
+        data-component="panel" data-id="booking-summary">
+        <h3 id="summary-car-name">Your car</h3>
+        <div class="image" id="summary-car-image" style="aspect-ratio:16/10;border-radius:10px;background:#f3f4f6 center/cover no-repeat;margin-bottom:0.5rem;"></div>
+        <p class="muted" id="summary-car-meta"></p>
+
+        <div class="summary-row"><span>Daily rate</span><span id="summary-daily">$0.00</span></div>
+        <div class="summary-row"><span>Days</span><span id="summary-days">0</span></div>
+        <div class="summary-row"><span>Subtotal</span><span id="summary-subtotal">$0.00</span></div>
+        <div class="summary-row"><span>Extras</span><span id="summary-extras">$0.00</span></div>
+        <div class="summary-row"><span>Taxes &amp; fees (12%)</span><span id="summary-taxes">$0.00</span></div>
+        <div class="summary-row total"><span>Total</span><span id="summary-total">$0.00</span></div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer" data-section="footer">
+    <div class="container">
+      <div><div class="brand" style="color:#fff;">Drive<span>Away</span></div><p class="muted">A demo car rental site.</p></div>
+      <div><h4>Company</h4><p><a href="./about.html">About</a></p><p><a href="./contact.html">Contact</a></p></div>
+      <div><h4>Browse</h4><p><a href="./cars.html">All cars</a></p></div>
+    </div>
+    <div class="legal">© <span id="year"></span> DriveAway Demo. All rights reserved.</div>
+  </footer>
+
+  <script type="module" src="./assets/js/main.js"></script>
+  <script type="module" src="./assets/js/booking.js"></script>
+</body>
+</html>
