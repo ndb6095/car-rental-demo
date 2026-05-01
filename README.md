@@ -48,7 +48,7 @@ This demo follows the [Fullstory Skills Repository (FSR)](https://github.com/ful
 
 ### Snippet
 
-The Fullstory Browser snippet is included **in the `<head>` of every HTML page** with the org id placeholder `OXXXX`. Replace it with your real org id (e.g. `O-1ABC2D-na1`) in:
+The Fullstory Browser snippet is included **in the `<head>` of every HTML page** with the org id placeholder `171X19`. Replace it with your real org id (e.g. `O-1ABC2D-na1`) in:
 
 - `index.html`
 - `cars.html`
@@ -58,7 +58,7 @@ The Fullstory Browser snippet is included **in the `<head>` of every HTML page**
 - `about.html`
 - `contact.html`
 
-A simple find-and-replace works: `OXXXX` -> `O-YOUR-ORG-ID`.
+A simple find-and-replace works: `171X19` -> `O-YOUR-ORG-ID`.
 
 ### Stable selectors (Individual Element Decoration)
 
